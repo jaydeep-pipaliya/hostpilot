@@ -42,14 +42,14 @@ function Toast({ toast, onDismiss }) {
             )}
         >
             <Icon size={18} className={config.iconClass} />
-            <p className="flex-1 text-sm text-white">{toast.message}</p>
+            <p className="flex-1 text-sm text-body">{toast.message}</p>
             <motion.button
                 onClick={() => onDismiss(toast.id)}
-                className="p-1 rounded-md hover:bg-white/10 transition-colors"
+                className="p-1 rounded-md hover:bg-card-hover transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
             >
-                <X size={14} className="text-zinc-400" />
+                <X size={14} className="text-muted" />
             </motion.button>
         </motion.div>
     );

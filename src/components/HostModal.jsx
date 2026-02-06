@@ -127,16 +127,16 @@ function HostModal({ isOpen, onClose, host }) {
                         <div className="glass rounded-2xl shadow-glass overflow-hidden mx-4">
                             {/* Header */}
                             <div className="flex items-center justify-between p-6 border-b border-border">
-                                <h3 className="text-lg font-semibold text-white">
+                                <h3 className="text-lg font-semibold text-body">
                                     {isEditing ? 'Edit Host Entry' : 'Add New Host'}
                                 </h3>
                                 <motion.button
                                     onClick={onClose}
-                                    className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+                                    className="p-2 rounded-lg hover:bg-card-hover transition-colors"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
                                 >
-                                    <X size={18} className="text-zinc-400" />
+                                    <X size={18} className="text-muted" />
                                 </motion.button>
                             </div>
 
@@ -144,7 +144,7 @@ function HostModal({ isOpen, onClose, host }) {
                             <form onSubmit={handleSubmit} className="p-6 space-y-5">
                                 {/* IP Address */}
                                 <div>
-                                    <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    <label className="block text-sm font-medium text-body opacity-80 mb-2">
                                         IP Address *
                                     </label>
                                     <input
@@ -161,7 +161,7 @@ function HostModal({ isOpen, onClose, host }) {
                                         <motion.p
                                             initial={{ opacity: 0, y: -5 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            className="mt-2 text-sm text-red-400 flex items-center gap-1"
+                                            className="mt-2 text-sm text-red-500 flex items-center gap-1"
                                         >
                                             <AlertCircle size={14} />
                                             {errors.ip}
@@ -171,7 +171,7 @@ function HostModal({ isOpen, onClose, host }) {
 
                                 {/* Domain */}
                                 <div>
-                                    <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    <label className="block text-sm font-medium text-body opacity-80 mb-2">
                                         Domain Name *
                                     </label>
                                     <input
@@ -188,7 +188,7 @@ function HostModal({ isOpen, onClose, host }) {
                                         <motion.p
                                             initial={{ opacity: 0, y: -5 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            className="mt-2 text-sm text-red-400 flex items-center gap-1"
+                                            className="mt-2 text-sm text-red-500 flex items-center gap-1"
                                         >
                                             <AlertCircle size={14} />
                                             {errors.domain}
@@ -198,7 +198,7 @@ function HostModal({ isOpen, onClose, host }) {
 
                                 {/* Project Tag */}
                                 <div>
-                                    <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    <label className="block text-sm font-medium text-body opacity-80 mb-2">
                                         Project Tag
                                     </label>
                                     {isCreatingProject ? (
@@ -244,7 +244,7 @@ function HostModal({ isOpen, onClose, host }) {
 
                                 {/* Comment */}
                                 <div>
-                                    <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    <label className="block text-sm font-medium text-body opacity-80 mb-2">
                                         Comment
                                     </label>
                                     <input
@@ -259,15 +259,15 @@ function HostModal({ isOpen, onClose, host }) {
                                 {/* Enabled Toggle */}
                                 <div className="flex items-center justify-between py-2">
                                     <div>
-                                        <p className="text-sm font-medium text-zinc-300">Enable Entry</p>
-                                        <p className="text-xs text-zinc-500">Disabled entries are commented out</p>
+                                        <p className="text-sm font-medium text-body opacity-80">Enable Entry</p>
+                                        <p className="text-xs text-muted">Disabled entries are commented out</p>
                                     </div>
                                     <motion.button
                                         type="button"
                                         onClick={() => handleChange('enabled', !formData.enabled)}
                                         className={cn(
                                             'w-12 h-6 rounded-full relative transition-colors',
-                                            formData.enabled ? 'bg-success' : 'bg-zinc-600'
+                                            formData.enabled ? 'bg-green-500' : 'bg-border'
                                         )}
                                         whileTap={{ scale: 0.95 }}
                                     >

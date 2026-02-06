@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # HostPilot by Jp - One-line Installer
-# Usage: curl -fsSL https://raw.githubusercontent.com/<user>/hostpilot/master/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/<user>/hostpilot/main/install.sh | bash
 
 set -e
 
@@ -16,9 +16,9 @@ if [ "$OS_TYPE" == "Linux" ]; then
     
     # Check for debian-based system
     if [ -f /etc/debian_version ]; then
-        DEB_URL="https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0/hostpilot_0.1.0_amd64.deb"
-        echo "📦 Downloading HostPilot .deb package..."
-        curl -L "$DEB_URL" -o /tmp/hostpilot.deb
+        DEB_URL="https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.1/hostpilot_1.1.1_amd64.deb"
+        echo "📦 Downloading HostPilot .deb package (72MB)..."
+        curl -L --progress-bar "$DEB_URL" -o /tmp/hostpilot.deb
         
         echo "🔐 Installing (sudo required)..."
         sudo apt install -y /tmp/hostpilot.deb
@@ -32,7 +32,7 @@ if [ "$OS_TYPE" == "Linux" ]; then
 
 elif [ "$OS_TYPE" == "Darwin" ]; then
     echo "🍎 Detected macOS..."
-    echo "🔗 Please download the .dmg file from: https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0/HostPilot-0.1.0.dmg"
+    echo "🔗 Please download the macOS .zip from: https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.1/HostPilot-by-Jp-1.1.1-mac.zip"
     echo "Note: Terminal installation for macOS .dmg is coming soon."
 else
     echo "❌ Unsupported OS: $OS_TYPE"
