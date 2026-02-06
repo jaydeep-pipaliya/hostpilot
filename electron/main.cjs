@@ -31,12 +31,26 @@ function createWindow() {
     });
 
     // Load Vite dev server in development
-    if (process.env.NODE_ENV !== 'production') {
+    if (!app.isPackaged && process.env.NODE_ENV !== 'production') {
         mainWindow.loadURL('http://localhost:5173');
         mainWindow.webContents.openDevTools();
     } else {
-        mainWindow.loadFile(path.join(__dirname, '../dist/index.html'));
+        // Path resolution for packaged app
+        const indexPath = path.join(app.getAppPath(), 'dist', 'index.html');
+        console.log('App path:', app.getAppPath());
+        console.log('Loading index from:', indexPath);
+
+        mainWindow.loadFile(indexPath).catch(err => {
+            console.error('Failed to load index.html:', err);
+            // Fallback for different packaging structures
+            const fallbackPath = path.join(__dirname, '..', 'dist', 'index.html');
+            mainWindow.loadFile(fallbackPath);
+        });
     }
+
+    mainWindow.webContents.on('did-fail-load', (event, errorCode, errorDescription) => {
+        console.error('Page failed to load:', errorCode, errorDescription);
+    });
 }
 
 app.whenReady().then(createWindow);
