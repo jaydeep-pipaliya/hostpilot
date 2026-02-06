@@ -60,12 +60,10 @@ npm run electron:build
 ```
 
 ### Downloadable Versions
-The following installers have been generated in the `dist-electron` folder:
-- **Ubuntu/Linux**:
-  - [hostpilot_0.1.0_amd64.deb](dist-electron/hostpilot_0.1.0_amd64.deb) (Native Installer)
-  - [HostPilot by Jp-0.1.0.AppImage](dist-electron/HostPilot%20by%20Jp-0.1.0.AppImage) (Portable)
-- **macOS**:
-  - To build the `.dmg` or `.zip` for macOS, please run `npm run electron:build -- --mac` on a macOS machine or via a CI/CD service like GitHub Actions. (Building DMGs on Linux requires specific system-level dependencies).
+Download the latest installers from the official **[GitHub Releases](https://github.com/jaydeep-pipaliya/hostpilot/releases)** page.
+
+- **Ubuntu/Linux**: [hostpilot_0.1.0_amd64.deb](https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v0.1.0/hostpilot_0.1.0_amd64.deb)
+- **Portable**: [HostPilot-0.1.0.AppImage](https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v0.1.0/HostPilot-by-Jp-0.1.0.AppImage)
 
 We support:
 - **Ubuntu/Linux**: `.AppImage` and `.deb`
