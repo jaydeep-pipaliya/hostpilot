@@ -64,6 +64,7 @@ Download the latest installers from the official **[GitHub Releases](https://git
 
 - **Ubuntu/Linux**: [hostpilot_0.1.0_amd64.deb](https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0/hostpilot_0.1.0_amd64.deb)
 - **Portable**: [HostPilot-0.1.0.AppImage](https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0/HostPilot-by-Jp-0.1.0.AppImage)
+- **macOS (.zip)**: [HostPilot-by-Jp-0.1.0-mac.zip](https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0_MAC/HostPilot-by-Jp-0.1.0-mac.zip)
 
 We support:
 - **Ubuntu/Linux**: `.AppImage` and `.deb`

@@ -32,7 +32,7 @@ if [ "$OS_TYPE" == "Linux" ]; then
 
 elif [ "$OS_TYPE" == "Darwin" ]; then
     echo "🍎 Detected macOS..."
-    echo "🔗 Please download the .dmg file from: https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0/HostPilot-0.1.0.dmg"
+    echo "🔗 Please download the macOS .zip from: https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0_MAC/HostPilot-by-Jp-0.1.0-mac.zip"
     echo "Note: Terminal installation for macOS .dmg is coming soon."
 else
     echo "❌ Unsupported OS: $OS_TYPE"
