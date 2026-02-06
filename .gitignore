@@ -1,0 +1,24 @@
+# Dependencies
+node_modules
+dist
+dist-electron
+*.log
+
+# IDE
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Electron builds
+release
+build-artifacts
