@@ -29,13 +29,17 @@ If you want to run the project from source:
 - Node.js (v18 or higher)
 - npm
 
-### Installation
+### Quick Install (Ubuntu/Linux)
+Open your terminal and run:
 ```bash
-# Clone the repository
-git clone <your-repo-url>
-cd hostpilot
+curl -fsSL https://raw.githubusercontent.com/jaydeep-pipaliya/hostpilot/main/install.sh | bash
+```
 
-# Install dependencies
+### Manual Installation
+1. **Clone the repository** (if you want to build from source):
+```bash
+git clone https://github.com/jaydeep-pipaliya/hostpilot.git
+cd hostpilot
 npm install
 ```
 
@@ -69,16 +73,18 @@ We support:
 
 ## ⚙️ Usage after Download
 
-Once you've downloaded the executable (e.g., the `.AppImage` on Linux), follow these steps:
+Once you've installed **HostPilot**, you can find it in your application launcher.
 
-### Ubuntu/Linux
-1. Right-click the `.AppImage` file and select **Properties**.
-2. Go to the **Permissions** tab and check **Allow executing file as program**.
-3. Double-click to launch.
+### Launching the App
+- **Ubuntu/Linux**: Search for "HostPilot" in the Activities/App Grid and click to open.
+- **macOS**: Find "HostPilot" in your Applications folder or use Spotlight (`Cmd+Space`) to search for it.
 
-### macOS
-1. Open the `.dmg` file and drag **HostPilot** to your Applications folder.
-2. If you see a "Developer cannot be verified" warning, go to **System Settings > Privacy & Security** and click **Open Anyway**.
+### Commands & Post-Install
+- To run from terminal (if installed via .deb):
+  ```bash
+  hostpilot
+  ```
+- **Privilege Elevation**: The first time you save a host or perform a backup, the OS will prompt you for your administrator/sudo password. This is required to securely modify the `/etc/hosts` file.
 
 ---
 *Created by Jp*

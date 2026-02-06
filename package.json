@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "description": "A premium hosts file manager for Linux and macOS.",
   "author": "Jp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaydeep-pipaliya/hostpilot.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
