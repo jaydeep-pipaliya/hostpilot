@@ -17,8 +17,8 @@ if [ "$OS_TYPE" == "Linux" ]; then
     # Check for debian-based system
     if [ -f /etc/debian_version ]; then
         DEB_URL="https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0/hostpilot_0.1.0_amd64.deb"
-        echo "📦 Downloading HostPilot .deb package..."
-        curl -L "$DEB_URL" -o /tmp/hostpilot.deb
+        echo "📦 Downloading HostPilot .deb package (72MB)..."
+        curl -L --progress-bar "$DEB_URL" -o /tmp/hostpilot.deb
         
         echo "🔐 Installing (sudo required)..."
         sudo apt install -y /tmp/hostpilot.deb
