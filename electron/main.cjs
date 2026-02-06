@@ -22,7 +22,8 @@ function createWindow() {
         minHeight: 700,
         frame: false,
         titleBarStyle: 'hidden',
-        backgroundColor: '#0a0a0f',
+        backgroundColor: '#ffffff',
+        icon: path.join(__dirname, '..', 'build', 'icon.png'),
         webPreferences: {
             preload: path.join(__dirname, 'preload.cjs'),
             contextIsolation: true,

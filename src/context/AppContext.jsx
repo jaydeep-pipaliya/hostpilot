@@ -28,7 +28,16 @@ export function AppProvider({ children }) {
     const [isLoading, setIsLoading] = useState(true);
     const [hasChanges, setHasChanges] = useState(false);
     const [toasts, setToasts] = useState([]);
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState('light');
+
+    // Update html class when theme changes
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [theme]);
 
     // Load hosts on mount
     useEffect(() => {

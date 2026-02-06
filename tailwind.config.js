@@ -8,11 +8,15 @@ export default {
     theme: {
         extend: {
             colors: {
-                background: '#0a0a0f',
-                surface: '#111118',
-                'surface-hover': '#1a1a24',
-                border: 'rgba(255, 255, 255, 0.08)',
-                'border-hover': 'rgba(255, 255, 255, 0.15)',
+                background: 'var(--bg-body)',
+                body: 'var(--text-body)',
+                muted: 'var(--text-muted)',
+                card: 'var(--bg-card)',
+                'card-hover': 'var(--bg-card-hover)',
+                border: 'var(--border-color)',
+                'border-hover': 'var(--border-color)',
+                primary: '#8b5cf6',
+                secondary: '#ec4899',
                 accent: {
                     DEFAULT: '#8b5cf6',
                     hover: '#a78bfa',
@@ -23,13 +27,13 @@ export default {
             },
             backgroundImage: {
                 'gradient-primary': 'linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)',
-                'gradient-secondary': 'linear-gradient(135deg, #14b8a6 0%, #6366f1 100%)',
-                'glass': 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
+                'gradient-secondary': 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)',
+                'glass': 'var(--bg-glass)',
             },
             boxShadow: {
-                'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
+                'glass': 'var(--shadow-glass)',
                 'glow': '0 0 20px rgba(139, 92, 246, 0.3)',
-                'soft': '0 4px 20px rgba(0, 0, 0, 0.2)',
+                'soft': '0 4px 20px rgba(0, 0, 0, 0.1)',
             },
             borderRadius: {
                 '2xl': '1rem',

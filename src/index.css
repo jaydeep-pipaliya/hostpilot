@@ -8,14 +8,47 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-body: #ffffff;
+  --text-body: #0f172a;
+  --text-muted: #64748b;
+  --bg-card: #f8fafc;
+  --bg-card-hover: #f1f5f9;
+  --border-color: #e2e8f0;
+  --bg-input: #ffffff;
+  --text-input: #0f172a;
+  --bg-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.8) 100%);
+  --border-glass: #e2e8f0;
+  --shadow-glass: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+}
+
+.dark {
+  --bg-body: #0a0a0f;
+  --text-body: #fafafa;
+  --text-muted: #94a3b8;
+  --bg-card: #12121e;
+  --bg-card-hover: #1b1b2a;
+  --border-color: rgba(255, 255, 255, 0.06);
+  --bg-input: rgba(255, 255, 255, 0.03);
+  --text-input: #ffffff;
+  --bg-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+}
+
 html {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 body {
-  background-color: #0a0a0f;
-  color: #fafafa;
+  background-color: var(--bg-body);
+  color: var(--text-body);
   overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom scrollbar */
@@ -29,20 +62,20 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Glassmorphism utility classes */
 @layer components {
   .glass {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-glass);
   }
 
   .glass-hover {
@@ -50,8 +83,9 @@ body {
   }
 
   .glass-hover:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: var(--bg-glass);
+    opacity: 0.9;
+    border-color: var(--border-glass);
   }
 
   .btn-primary {
@@ -71,14 +105,15 @@ body {
 
   .btn-secondary {
     @apply px-4 py-2 rounded-xl font-medium;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    color: var(--text-body);
   }
 
   .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: var(--bg-card-hover);
+    border-color: var(--border-color);
   }
 
   .btn-danger {
@@ -93,9 +128,10 @@ body {
   }
 
   .input-field {
-    @apply w-full px-4 py-3 rounded-xl text-white placeholder-zinc-500;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    @apply w-full px-4 py-3 rounded-xl placeholder-zinc-500;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-input);
     transition: all 0.3s ease;
   }
 
@@ -112,8 +148,9 @@ body {
 
   .card {
     @apply rounded-2xl p-4;
-    background: #111118;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
   .card-hover {
@@ -121,18 +158,19 @@ body {
   }
 
   .card-hover:hover {
-    background: #1a1a24;
-    border-color: rgba(255, 255, 255, 0.15);
+    background: var(--bg-card-hover);
+    border-color: var(--border-color);
     transform: translateY(-2px);
   }
 
   .tag {
     @apply inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium;
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
-    color: #a78bfa;
+    color: #8b5cf6;
     border: 1px solid rgba(139, 92, 246, 0.3);
   }
 
+  /* Status badges */
   .status-enabled {
     @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
     background: rgba(16, 185, 129, 0.15);
@@ -160,18 +198,18 @@ body {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
 }
 
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.05) 25%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0.05) 75%
-  );
+  background: var(--bg-card);
+  background-image: linear-gradient(90deg,
+      transparent 25%,
+      var(--bg-card-hover) 50%,
+      transparent 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
@@ -181,6 +219,7 @@ body {
   0% {
     stroke-dashoffset: 50;
   }
+
   100% {
     stroke-dashoffset: 0;
   }

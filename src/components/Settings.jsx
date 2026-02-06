@@ -21,10 +21,10 @@ function SettingsSection({ title, icon: Icon, children }) {
             className="card"
         >
             <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-primary/20 flex items-center justify-center">
-                    <Icon size={16} className="text-accent" />
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Icon size={16} className="text-primary" />
                 </div>
-                <h3 className="font-semibold text-white">{title}</h3>
+                <h3 className="font-semibold text-body">{title}</h3>
             </div>
             {children}
         </motion.div>
@@ -100,27 +100,27 @@ function Settings() {
     return (
         <div className="max-w-2xl space-y-6">
             {/* Appearance */}
-            <SettingsSection title="Appearance" icon={Moon}>
+            <SettingsSection title="Appearance" icon={theme === 'dark' ? Moon : Sun}>
                 <div className="flex items-center justify-between py-2">
                     <div>
-                        <p className="text-sm font-medium text-zinc-300">Dark Mode</p>
-                        <p className="text-xs text-zinc-500">Toggle between light and dark theme</p>
+                        <p className="text-sm font-medium text-body opacity-80">Dark Mode</p>
+                        <p className="text-xs text-muted">Toggle between light and dark theme</p>
                     </div>
                     <motion.button
                         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                         className={cn(
                             'w-12 h-6 rounded-full relative transition-colors',
-                            theme === 'dark' ? 'bg-accent' : 'bg-zinc-600'
+                            theme === 'dark' ? 'bg-primary' : 'bg-border'
                         )}
                         whileTap={{ scale: 0.95 }}
                     >
                         <motion.div
-                            className="w-5 h-5 rounded-full bg-white absolute top-0.5 flex items-center justify-center"
+                            className="w-5 h-5 rounded-full bg-white shadow-sm absolute top-0.5 flex items-center justify-center"
                             animate={{ left: theme === 'dark' ? '26px' : '2px' }}
                             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                         >
                             {theme === 'dark' ? (
-                                <Moon size={12} className="text-accent" />
+                                <Moon size={12} className="text-primary" />
                             ) : (
                                 <Sun size={12} className="text-amber-500" />
                             )}
@@ -134,14 +134,14 @@ function Settings() {
                 <div className="space-y-4">
                     <div className="flex items-center justify-between py-2">
                         <div>
-                            <p className="text-sm font-medium text-zinc-300">Auto Backup</p>
-                            <p className="text-xs text-zinc-500">Create backup before every save</p>
+                            <p className="text-sm font-medium text-body opacity-80">Auto Backup</p>
+                            <p className="text-xs text-muted">Create backup before every save</p>
                         </div>
                         <motion.button
                             onClick={() => setAutoBackup(!autoBackup)}
                             className={cn(
                                 'w-12 h-6 rounded-full relative transition-colors',
-                                autoBackup ? 'bg-success' : 'bg-zinc-600'
+                                autoBackup ? 'bg-green-500' : 'bg-border'
                             )}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -165,16 +165,16 @@ function Settings() {
 
                     {backups.length > 0 && (
                         <div className="mt-4">
-                            <p className="text-xs font-medium text-zinc-500 mb-2">Recent Backups</p>
+                            <p className="text-xs font-medium text-muted mb-2">Recent Backups</p>
                             <div className="space-y-2 max-h-40 overflow-y-auto">
                                 {backups.slice(0, 5).map((backup, i) => (
                                     <div
                                         key={i}
-                                        className="flex items-center justify-between p-2 rounded-lg bg-white/5 text-sm"
+                                        className="flex items-center justify-between p-2 rounded-lg bg-card-hover text-sm"
                                     >
                                         <div className="flex items-center gap-2">
-                                            <History size={14} className="text-zinc-500" />
-                                            <span className="text-zinc-400 text-xs font-mono">
+                                            <History size={14} className="text-muted" />
+                                            <span className="text-muted text-xs font-mono">
                                                 {new Date(backup.date).toLocaleString()}
                                             </span>
                                         </div>
@@ -215,9 +215,9 @@ function Settings() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-center text-xs text-zinc-600 pt-6"
+                className="text-center text-xs text-muted pt-6"
             >
-                <p>HostPilot v1.0.0</p>
+                <p>HostPilot v1.1.1</p>
                 <p className="mt-1">A premium developer tool for managing hosts</p>
             </motion.div>
         </div>
