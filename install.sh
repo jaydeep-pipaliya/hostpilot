@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # HostPilot by Jp - One-line Installer
-# Usage: curl -fsSL https://raw.githubusercontent.com/<user>/hostpilot/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/<user>/hostpilot/master/install.sh | bash
 
 set -e
 

@@ -32,7 +32,7 @@ If you want to run the project from source:
 ### Quick Install (Ubuntu/Linux)
 Open your terminal and run:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jaydeep-pipaliya/hostpilot/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jaydeep-pipaliya/hostpilot/master/install.sh | bash
 ```
 
 ### Manual Installation
