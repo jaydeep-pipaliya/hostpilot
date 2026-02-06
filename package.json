@@ -1,7 +1,7 @@
 {
   "name": "hostpilot",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.1.1",
   "description": "A premium hosts file manager for Linux and macOS.",
   "author": "Jp",
   "repository": {
@@ -61,9 +61,10 @@
       ]
     },
     "linux": {
+      "executableName": "hostpilot",
       "category": "Development",
       "maintainer": "Jp <jp@example.com>",
-      "icon": "build/icons/icon.png",
+      "icon": "build/icon.png",
       "target": [
         "AppImage",
         "deb"
