@@ -16,7 +16,7 @@ if [ "$OS_TYPE" == "Linux" ]; then
     
     # Check for debian-based system
     if [ -f /etc/debian_version ]; then
-        DEB_URL="https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v0.1.0/hostpilot_0.1.0_amd64.deb"
+        DEB_URL="https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0/hostpilot_0.1.0_amd64.deb"
         echo "📦 Downloading HostPilot .deb package..."
         curl -L "$DEB_URL" -o /tmp/hostpilot.deb
         
@@ -32,7 +32,7 @@ if [ "$OS_TYPE" == "Linux" ]; then
 
 elif [ "$OS_TYPE" == "Darwin" ]; then
     echo "🍎 Detected macOS..."
-    echo "🔗 Please download the .dmg file from: https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v0.1.0/HostPilot-0.1.0.dmg"
+    echo "🔗 Please download the .dmg file from: https://github.com/jaydeep-pipaliya/hostpilot/releases/download/v1.1.0/HostPilot-0.1.0.dmg"
     echo "Note: Terminal installation for macOS .dmg is coming soon."
 else
     echo "❌ Unsupported OS: $OS_TYPE"
